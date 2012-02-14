@@ -12,7 +12,7 @@ public class HelloWorldActivity extends Activity {
         super.onCreate(savedInstanceState);
      //   setContentView(R.layout.main);
         TextView tv = new TextView(this);
-        tv.setText("This is a textview");
+        tv.setText("This is a textview 2");
         setContentView(tv);
     }
 }
