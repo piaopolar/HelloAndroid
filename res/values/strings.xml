@@ -3,5 +3,8 @@
 
     <string name="hello">Hello World, HelloWorldActivity!</string>
     <string name="app_name">HelloWorld</string>
+    <string name="BtnPre">Pre</string>
+    <string name="BtnNext">Next</string>
+    
 
 </resources>
