@@ -21,7 +21,9 @@
 		<activity android:name=".SecondPage" 
                   android:label="secondPage"> 
         </activity> 
-
+		<activity android:name=".TestListDlg" 
+                  android:label="@string/ProblemsTitle"> 
+        </activity> 
     </application>
 
 </manifest>

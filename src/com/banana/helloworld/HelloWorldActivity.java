@@ -34,7 +34,7 @@ public class HelloWorldActivity extends Activity {
 //					e.printStackTrace();
 //				}  
 
-            	Intent SecondPage = new Intent(HelloWorldActivity.this, SecondPage.class);
+            	Intent SecondPage = new Intent(HelloWorldActivity.this, TestListDlg.class);
             	startActivity(SecondPage);
             }
         });
