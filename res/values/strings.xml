@@ -5,6 +5,8 @@
     <string name="app_name">HelloWorld</string>
     <string name="BtnPre">Pre</string>
     <string name="BtnNext">Next</string>
+    <string name="Back2First">Back2First</string>
+    <string name="ToList">ToList</string>
     
 
 </resources>
