@@ -34,12 +34,9 @@
             android:layout_weight="0.57"
             android:text="Button" />
     </LinearLayout>
-
-
-
-
+
     <ListView
-        android:id="@+id/listResult"
+        android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="354dp" >
 
