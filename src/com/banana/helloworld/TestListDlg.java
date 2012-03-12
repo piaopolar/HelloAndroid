@@ -15,21 +15,50 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-
 public class TestListDlg extends Activity {
-	
-//	private ListView listView;
 
-	static final String[] COUNTRIES = new String[] {    "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra",    "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina",};
+	private String[] myTitle = { "思想决定行为", "行为形成习惯", "习惯决定性格", "性格决定命运",
+			"狂热的Android开发者" };
+
+	private String[] myDescript = { "说话办事儿，首先要有一个好的思想，有了好思想，才能体现在行动上",
+			"能够坚持的行动将成为习惯", "对事对人的习惯性行为表现为人的性格", "往往成就大事的人，都有着很好的性格",
+			"狂热的Android程序员需要有一个好性格" };
+
+	private String[] myNote = { "备注1", "备注2", "备注3", "备注4", "备注5" };
+
+	// private ListView listView;
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_list_dlg);
 
-		ListView listView  = (ListView)findViewById(R.id.listResult);  
-		  
-        listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, COUNTRIES));  
+		ListView listView = (ListView) findViewById(R.id.listResult);
+
+		ArrayList<Map<String, Object>> mData = new ArrayList<Map<String, Object>>();
+		int lengh = myTitle.length;
+
+		for (int i = 0; i < lengh; i++) {
+
+			Map<String, Object> item = new HashMap<String, Object>();
+
+			item.put("title", myTitle[i]);
+
+			item.put("Descript", myDescript[i]);
+
+			item.put("note", myNote[i]);
+
+			mData.add(item);
+
+		}
+
+		SimpleAdapter adapter = new SimpleAdapter(this, mData,
+				R.layout.list_item, new String[] { "title", "Descript",
+						"note" }, new int[] { R.id.title, R.id.descript,
+						R.id.note });
+
+		listView.setAdapter(adapter);
 
 		findViewById(R.id.btnBack).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
