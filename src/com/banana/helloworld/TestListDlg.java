@@ -15,6 +15,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.banana.basecode.JSon;
+
 public class TestListDlg extends Activity {
 
 	private String[] myTitle = { "思想决定行为", "行为形成习惯", "习惯决定性格", "性格决定命运",
@@ -37,25 +39,13 @@ public class TestListDlg extends Activity {
 		ListView listView = (ListView) findViewById(R.id.listResult);
 
 		ArrayList<Map<String, Object>> mData = new ArrayList<Map<String, Object>>();
-		int lengh = myTitle.length;
-
-		for (int i = 0; i < lengh; i++) {
-
-			Map<String, Object> item = new HashMap<String, Object>();
-
-			item.put("title", myTitle[i]);
-
-			item.put("Descript", myDescript[i]);
-
-			item.put("note", myNote[i]);
-
-			mData.add(item);
-
-		}
+		
+		JSon.SetContext(this);
+		mData = JSon.getArrayList("xianlvqiyuan.json");
 
 		SimpleAdapter adapter = new SimpleAdapter(this, mData,
-				R.layout.list_item, new String[] { "title", "Descript",
-						"note" }, new int[] { R.id.title, R.id.descript,
+				R.layout.list_item, new String[] { "question", "answer1",
+						"price1" }, new int[] { R.id.title, R.id.descript,
 						R.id.note });
 
 		listView.setAdapter(adapter);
