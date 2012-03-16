@@ -2,6 +2,7 @@ package com.banana.helloworld;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
@@ -41,7 +42,8 @@ public class TestListDlg extends Activity {
 		ArrayList<Map<String, Object>> mData = new ArrayList<Map<String, Object>>();
 		
 		JSon.SetContext(this);
-		mData = JSon.getArrayList("xianlvqiyuan.json");
+		List<Map<String,Object>> list = JSon.getList("3.json");
+		mData = (ArrayList<Map<String, Object>>) list;
 
 		SimpleAdapter adapter = new SimpleAdapter(this, mData,
 				R.layout.list_item, new String[] { "question", "answer1",

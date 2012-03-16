@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -37,12 +38,19 @@ public class JSon {
 
 				// \Test\assets\yan.txt这里有这样的文件存在
 
-				int length = in.available();
-				byte[] buffer = new byte[length];
-				in.read(buffer);
-				in.close();
-				String res = EncodingUtils.getString(buffer, "UTF-8");
-				return res;
+				InputStreamReader is = new InputStreamReader(in);
+				br = new BufferedReader(is);
+				String read = br.readLine();
+				StringBuffer sb = new StringBuffer();
+				sb.append(read);
+
+				while (read != null) {
+					// System.out.println(read);
+					read = br.readLine();
+					sb.append(read);
+				}
+
+				return sb.toString();
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
@@ -102,6 +110,7 @@ public class JSon {
 		ArrayList<Map<String, Object>> list = null;
 		try {
 			String jsonString = getFileString(filename);
+			System.out.print(jsonString);
 			JSONArray jsonArray = new JSONArray(jsonString);
 			JSONObject jsonObject;
 			list = new ArrayList<Map<String, Object>>();

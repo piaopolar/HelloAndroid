@@ -1,5 +1,12 @@
 package com.banana.helloworld;
 
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.apache.http.util.EncodingUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.banana.network.GetInfo;
 
 import android.app.Activity;
@@ -7,6 +14,7 @@ import android.content.Intent;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.*;
 import android.widget.*;
@@ -45,6 +53,32 @@ public class HelloWorldActivity extends Activity {
         {  
             public void onClick(View v)
             {  
+
+				InputStream is;
+				int code = 999;
+				try {
+					is = getAssets().open("2.json");
+                    byte[] data = new byte[is.available()];
+                    is.read(data);
+                    String content = new String(data);
+                    System.out.println("data begin");
+                    System.out.println(content);
+                    System.out.println("data end");
+                    JSONObject jsonContent = new JSONObject(content);
+                    code = jsonContent.getInt("code");
+
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				// \Test\assets\yan.txt这里有这样的文件存在
+
+            	
+            	
             	Uri uriTest = Uri.parse("http://sxd.91.com");
             	Intent intent = new Intent(Intent.ACTION_VIEW, uriTest);
             	startActivity(intent);
