@@ -38,16 +38,15 @@ public class JSon {
 
 				// \Test\assets\yan.txt这里有这样的文件存在
 
-				InputStreamReader is = new InputStreamReader(in);
+				InputStreamReader is = new InputStreamReader(in, "GB2312");
+
 				br = new BufferedReader(is);
 				String read = br.readLine();
 				StringBuffer sb = new StringBuffer();
-				sb.append(read);
-
 				while (read != null) {
 					// System.out.println(read);
-					read = br.readLine();
 					sb.append(read);
+					read = br.readLine();
 				}
 
 				return sb.toString();
@@ -64,9 +63,7 @@ public class JSon {
 		return "";
 	}
 
-	// 将文件转换为Map 类型
-	public static Map<String, Object> getMap(String filename) {
-		String jsonString = getFileString(filename);
+	public static Map<String, Object> getMap(String jsonString) {
 		JSONObject jsonObject;
 		try {
 			jsonObject = new JSONObject(jsonString);
