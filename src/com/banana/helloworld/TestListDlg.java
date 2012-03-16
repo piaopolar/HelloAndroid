@@ -36,8 +36,8 @@ public class TestListDlg extends Activity {
 
 		SimpleAdapter adapter = new SimpleAdapter(this, mData,
 				R.layout.list_item, new String[] { "question", "answer1",
-						"price1" }, new int[] { R.id.title, R.id.descript,
-						R.id.note });
+						"price1", "answer2", "price2" }, new int[] { R.id.question, R.id.answer1,
+						R.id.price1, R.id.answer2, R.id.price2 });
 
 		listView.setAdapter(adapter);
 
