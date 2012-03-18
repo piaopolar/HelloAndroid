@@ -53,37 +53,40 @@ public class HelloWorldActivity extends Activity {
         {  
             public void onClick(View v)
             {  
+            	
+               	Intent SecondPage = new Intent(HelloWorldActivity.this, QueryListHost.class);
+            	startActivity(SecondPage);
 
-				InputStream is;
-				int code = 999;
-				try {
-					is = getAssets().open("2.json");
-                    byte[] data = new byte[is.available()];
-                    is.read(data);
-                    String content = new String(data);
-                    System.out.println("data begin");
-                    System.out.println(content);
-                    System.out.println("data end");
-                    JSONObject jsonContent = new JSONObject(content);
-                    code = jsonContent.getInt("code");
-
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (JSONException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+//				InputStream is;
+//				int code = 999;
+//				try {
+//					is = getAssets().open("2.json");
+//                    byte[] data = new byte[is.available()];
+//                    is.read(data);
+//                    String content = new String(data);
+//                    System.out.println("data begin");
+//                    System.out.println(content);
+//                    System.out.println("data end");
+//                    JSONObject jsonContent = new JSONObject(content);
+//                    code = jsonContent.getInt("code");
+//
+//				} catch (IOException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				} catch (JSONException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
 
 				// \Test\assets\yan.txt这里有这样的文件存在
 
             	
             	
-            	Uri uriTest = Uri.parse("http://sxd.91.com");
-            	Intent intent = new Intent(Intent.ACTION_VIEW, uriTest);
-            	startActivity(intent);
-            	TextView tv = (TextView) findViewById(R.id.Text);
-            	tv.setText("");
+//            	Uri uriTest = Uri.parse("http://sxd.91.com");
+//            	Intent intent = new Intent(Intent.ACTION_VIEW, uriTest);
+//            	startActivity(intent);
+//            	TextView tv = (TextView) findViewById(R.id.Text);
+//            	tv.setText("");
             }
         });
         

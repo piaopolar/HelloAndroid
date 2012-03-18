@@ -34,15 +34,19 @@ public final class R {
         public static final int question=0x7f050000;
     }
     public static final class layout {
-        public static final int list_item=0x7f030000;
-        public static final int main=0x7f030001;
-        public static final int second_dlg=0x7f030002;
-        public static final int test_list_dlg=0x7f030003;
+        public static final int equip=0x7f030000;
+        public static final int list_item=0x7f030001;
+        public static final int main=0x7f030002;
+        public static final int material=0x7f030003;
+        public static final int query_result_host=0x7f030004;
+        public static final int second_dlg=0x7f030005;
+        public static final int test_list_dlg=0x7f030006;
     }
     public static final class string {
         public static final int Back2First=0x7f040004;
         public static final int BtnNext=0x7f040003;
         public static final int BtnPre=0x7f040002;
+        public static final int DataBase=0x7f040007;
         public static final int ProblemsTitle=0x7f040006;
         public static final int ToList=0x7f040005;
         public static final int app_name=0x7f040001;

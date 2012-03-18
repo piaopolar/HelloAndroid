@@ -24,6 +24,15 @@
 		<activity android:name=".TestListDlg" 
                   android:label="@string/ProblemsTitle"> 
         </activity> 
+		<activity android:name=".QueryListHost" 
+                  android:label="@string/DataBase"> 
+        </activity> 
+ 		<activity android:name=".CDlgMaterial" 
+                  android:label="@string/DataBase"> 
+        </activity>        
+		<activity android:name=".CDlgEquip" 
+                  android:label="@string/DataBase"> 
+        </activity>         
     </application>
 
 </manifest>
