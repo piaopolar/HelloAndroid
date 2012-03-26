@@ -65,7 +65,7 @@ public class CDlgMaterial extends Activity {
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
 			Toast.makeText(CDlgMaterial.this,
-					"选中第" + String.valueOf(arg2) + "行", 500).show();
+					"选中第" + String.valueOf(arg2) + "行" + "arg3" + String.valueOf(arg3), 500).show();
 		}
 	}
 }

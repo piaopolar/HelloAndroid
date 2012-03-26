@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    
-
-</RelativeLayout>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" android:orientation="vertical" android:id="@+id/top">
+    <ListView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_weight="2"
+              android:numColumns="2"
+              android:columnWidth="0dp"
+              android:id="@+id/list">
+    </ListView>
+    <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/backbutton" android:text="testtest"></Button>
+</LinearLayout>
